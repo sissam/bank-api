@@ -1,4 +1,5 @@
 package com.bank.account.bank.entities;
 
-public class CurrentAccount {
+public class CurrentAccount extends Equipment {
+
 }

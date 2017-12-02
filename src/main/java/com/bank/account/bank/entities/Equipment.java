@@ -1,4 +1,12 @@
 package com.bank.account.bank.entities;
 
-public class Equipment {
+import com.bank.account.bank.dto.Amount;
+
+public abstract class Equipment {
+    private String id;
+
+    private Client owner ;
+
+    private Amount balance ;
+
 }
