@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -21,18 +22,27 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     OperationRepository operationRepository;
 
-    public void makeDeposit(@NotNull RequestDto requestDto) {
-        Optional<CurrentAccount> currentAccount = Optional.of(accountRepository.findOne(requestDto.getId()));
+    /**
+     * FIXME : split this method in two, one method per type
+     * @param requestDto
+     */
+    public void makeOperation(@NotNull RequestDto requestDto) {
+
+        if("WITHDRAW".equalsIgnoreCase(requestDto.getType())){
+            requestDto.setAmount(0 - requestDto.getAmount());
+        }
+
+        Optional<CurrentAccount> currentAccount = Optional.of(accountRepository.findOne(requestDto.getAccountId()));
         if(currentAccount.isPresent()){
             Double balance = currentAccount.get().getBalance() ;
-            currentAccount.get().setBalance(balance + requestDto.getAmount().getAmount());
+            currentAccount.get().setBalance(balance + requestDto.getAmount());
             accountRepository.save(currentAccount.get());
         }
         //TODO : save operation, type deposit, date, amount, id account
-        operationRepository.save(new Operation());
-    }
-
-    public void makeWithdraw(@NotNull RequestDto requestDto) {
-
+        operationRepository.save(Operation.builder().
+                amount(requestDto.getAmount()).Currency(requestDto.getCurrency())
+                .currentAccount(currentAccount.get()).localDateTime(LocalDateTime.now())
+                .type(requestDto.getType())
+                .build());
     }
 }

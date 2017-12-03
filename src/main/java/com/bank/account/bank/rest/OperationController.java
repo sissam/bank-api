@@ -1,5 +1,6 @@
 package com.bank.account.bank.rest;
 
+import com.bank.account.bank.config.EndPoints;
 import com.bank.account.bank.dto.OperationDTO;
 import com.bank.account.bank.service.OperationService;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/bank/operations")
+@RequestMapping("api/bank")
 public class OperationController {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -29,7 +30,7 @@ public class OperationController {
         return null;
     }
     */
-    @RequestMapping(value = "/{accountId}", method = RequestMethod.GET, produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = EndPoints.WITHDRAW+"/{accountId}", method = RequestMethod.GET, produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Collection<OperationDTO>> getOperations(@PathVariable("accountId") Long accountId){
         log.info("start api operations");
         List<OperationDTO> operations = operationService.getAllOperations(accountId);

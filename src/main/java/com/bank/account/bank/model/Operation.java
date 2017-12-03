@@ -1,21 +1,20 @@
 package com.bank.account.bank.model;
 
-import com.bank.account.bank.dto.Amount;
 import com.bank.account.bank.dto.OperationDTO;
+import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
 @Entity
 @Table(name = "OPERATION")
+@Builder
 public class Operation {
 
     @Id
+    @GeneratedValue
     private Long id ;
 
     private String type ;

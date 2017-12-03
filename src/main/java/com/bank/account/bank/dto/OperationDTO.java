@@ -12,8 +12,4 @@ public class OperationDTO {
     private String type ;
     private Double amount ;
     private LocalDateTime date;
-
-    public static RequestDto  buildOperationDTO(OperationDTO operationDTO){
-        return new RequestDto();
-    }
 }

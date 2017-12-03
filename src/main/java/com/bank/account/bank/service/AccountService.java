@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 import javax.validation.constraints.NotNull;
 
 public interface AccountService {
-    void makeDeposit(@NotNull RequestDto requestDto);
+    void makeOperation(@NotNull RequestDto requestDto);
 }
