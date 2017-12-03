@@ -1,4 +1,4 @@
-package com.bank.account.bank.endpoint;
+package com.bank.account.bank.rest;
 
 import com.bank.account.bank.dto.Amount;
 import lombok.Getter;

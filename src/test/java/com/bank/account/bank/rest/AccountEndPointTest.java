@@ -1,4 +1,4 @@
-package com.bank.account.bank.endpoint;
+package com.bank.account.bank.rest;
 
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;

@@ -26,3 +26,7 @@ US 3:
 In order to check my operations
 As a bank client
 I want to see the history (operation, date, amount, balance) of my operations
+
+========================================================================================================
+
+Technologies : Spring Boot, Rest api, swagger, postman, Spring core, Spring Data, JPA, Hibernate, H2, BDD, Cucumber, Junit

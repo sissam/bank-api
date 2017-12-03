@@ -1,4 +1,4 @@
 package com.bank.account.bank.acceptance;
 
-public class WithDrawSteps {
+public class WithdrawTest {
 }
