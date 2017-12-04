@@ -26,7 +26,7 @@ public class AccountServiceImpl implements AccountService {
      * FIXME : split this method in two, one method per type
      * @param requestDto
      */
-    public void makeOperation(@NotNull RequestDto requestDto) {
+    public CurrentAccount makeOperation(@NotNull RequestDto requestDto) {
 
         if("WITHDRAW".equalsIgnoreCase(requestDto.getType())){
             requestDto.setAmount(0 - requestDto.getAmount());
@@ -44,5 +44,6 @@ public class AccountServiceImpl implements AccountService {
                 .currentAccount(currentAccount.get()).localDateTime(LocalDateTime.now())
                 .type(requestDto.getType())
                 .build());
+        return currentAccount.get();
     }
 }

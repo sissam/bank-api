@@ -18,8 +18,7 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public List<OperationDTO> getAllOperations(Long accountId) {
-        List<OperationDTO> operationDTOList = new ArrayList<>();
-        List<Operation> operationList = operationRepository.findAll();
+        List<Operation> operationList = operationRepository.findOperationsByCurrentAccountId(accountId);
         return operationList.stream().map(Operation::buildOperationDTO).collect(Collectors.toList());
     }
 }

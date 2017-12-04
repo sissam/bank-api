@@ -30,7 +30,7 @@ public class OperationController {
         return null;
     }
     */
-    @RequestMapping(value = EndPoints.WITHDRAW+"/{accountId}", method = RequestMethod.GET, produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = EndPoints.LIST_OPERATIONS+"/{accountId}", method = RequestMethod.GET, produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Collection<OperationDTO>> getOperations(@PathVariable("accountId") Long accountId){
         log.info("start api operations");
         List<OperationDTO> operations = operationService.getAllOperations(accountId);

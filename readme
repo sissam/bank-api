@@ -35,4 +35,15 @@ Postman or Soapui might be used to test apis,
 Technologies : Spring Boot, Rest api, swagger, postman, Spring core, Spring Data, JPA, Hibernate, H2, BDD, Cucumber, Junit
 Developped using Intellij Idea and java 9
 Finally run under java 8, oracle documentation : The application class loader is no longer an instance of URLClassLoader but, rather, of an internal class
-Lombock 1.16.16 because earlier versions don't work with java 9
+Lombock 1.16.16 because newer versions don't work with java 9
+
+TODO :  add front
+        map exceptions
+        add unit test
+        add spring security, jwt
+        manage database versions with liquibase
+        use java 9
+        use graphql
+        add validation
+        test performance
+        develop another one using java ee 8

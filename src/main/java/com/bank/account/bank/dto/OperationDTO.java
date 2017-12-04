@@ -11,5 +11,6 @@ public class OperationDTO {
     private Long id ;
     private String type ;
     private Double amount ;
-    private LocalDateTime date;
+    private String currency;
+    private String date;
 }

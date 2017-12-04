@@ -1,8 +1,10 @@
 package com.bank.account.bank.model;
 
 import com.bank.account.bank.dto.OperationDTO;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,6 +13,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "OPERATION")
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Operation {
 
     @Id
@@ -30,6 +34,6 @@ public class Operation {
 
     public static OperationDTO buildOperationDTO(Operation operation){
         //FIXME : use mapper instead
-        return OperationDTO.builder().id(operation.getId()).type(operation.getType()).date(operation.getLocalDateTime()).amount(operation.getAmount()).build();
+        return OperationDTO.builder().id(operation.getId()).type(operation.getType()).date(operation.getLocalDateTime().toString()).amount(operation.getAmount()).currency(operation.getCurrency()).build();
     }
 }
