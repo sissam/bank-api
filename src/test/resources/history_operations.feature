@@ -1,4 +1,4 @@
-Feature : list all operations for a given account
+Feature: get list of operations
 
   Scenario:  list operations
     Given : I have list of 3 operations attached to my account
