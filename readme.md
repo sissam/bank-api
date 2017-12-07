@@ -28,15 +28,15 @@ As a bank client
 I want to see the history (operation, date, amount, balance) of my operations
 
 ========================================================================================================
-mvn spring-boot:run in the main directory of project
-swagger : http://localhost:8080/v2/api-docs
-    http://localhost:8080/swagger-ui.html
-Postman or Soapui might be used to test apis as well,
-Technologies : Spring Boot, Rest api, swagger, postman, Spring core, Spring Data, JPA, Hibernate, H2, BDD, Cucumber, Junit
-Developed using Intellij Idea and java 9
-Finally run under java 8, oracle documentation : The application class loader is no longer an instance of URLClassLoader but, rather, of an internal class
-Lombock 1.16.16 because newer versions don't work with java 9
-
+mvn spring-boot:run in the main directory of project  
+swagger : http://localhost:8080/v2/api-docs  
+    http://localhost:8080/swagger-ui.html  
+Postman or Soapui might be used to test apis as well,  
+Technologies : Spring Boot, Rest api, swagger, postman, Spring core, Spring Data, JPA, Hibernate, H2, BDD, Cucumber, Junit  
+Developed using Intellij Idea and java 9  
+Finally run under java 8, oracle documentation : The application class loader is no longer an instance of URLClassLoader but, rather, of an internal class  
+Lombock 1.16.16 because newer versions don't work with java 9  
+  
 TO DO : open browser after run --> done
         fix bdd --> done (lambda removed)
         add concrete tests and asserts in bdd step defs
